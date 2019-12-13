@@ -18,42 +18,43 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/apply"
+        android:id="@+id/invoice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/applyLabel"/>
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/dateLabel"
+        android:id="@+id/maturity_date_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/date_end_investment"
         android:textAlignment="center"
         android:layout_marginTop="@dimen/margin_top"
-        app:layout_constraintTop_toBottomOf="@id/apply"/>
+        app:layout_constraintTop_toBottomOf="@id/invoice"/>
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/date"
+        android:id="@+id/maturity_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/dateLabel"/>
+        app:layout_constraintTop_toBottomOf="@id/maturity_date_label"/>
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/percentageLabel"
+        android:id="@+id/rate_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/date_end_investment"
         android:textAlignment="center"
         android:layout_marginTop="@dimen/margin_top"
-        app:layout_constraintTop_toBottomOf="@id/date"/>
+        app:layout_constraintTop_toBottomOf="@id/maturity_date"/>
 
     <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/percentage"
+        android:id="@+id/rate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/percentageLabel"/>
+        app:layout_constraintTop_toBottomOf="@id/rate_label"/>
     
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_simulate"
         android:layout_width="@dimen/button_size"
         android:layout_height="wrap_content"
         android:text="@string/button_simulate"

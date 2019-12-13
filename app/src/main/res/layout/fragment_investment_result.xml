@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/padding_content"
     tools:context=".view.investment.InvestmentResultFragment">
 
     <android.support.v7.widget.AppCompatTextView
@@ -13,7 +14,6 @@
         android:layout_height="wrap_content"
         android:text="@string/result_label"
         android:textAlignment="center"
-        android:layout_marginTop="@dimen/margin_top"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <android.support.v7.widget.AppCompatTextView
@@ -33,12 +33,185 @@
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/txtValue" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_detail"
-        android:layout_width="match_parent"
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_initial_invoice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Valor aplicado inicialmente"
         android:layout_marginTop="@dimen/margin_top"
         app:layout_constraintTop_toBottomOf="@id/total_income"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/initial_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_income"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_gross_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Valor bruto investido"
+        app:layout_constraintTop_toBottomOf="@id/label_initial_invoice"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/gross_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_initial_invoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_rental_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Valor do rendimento"
+        app:layout_constraintTop_toBottomOf="@id/label_gross_amount"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/rental_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_gross_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_ir_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="IR sobre o investimento"
+        app:layout_constraintTop_toBottomOf="@id/label_rental_invoice"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/ir_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_rental_invoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_liquid_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Valor líquido do investimento"
+        app:layout_constraintTop_toBottomOf="@id/label_ir_invoice"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/liquid_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_ir_invoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_date_rescue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Data de resgate"
+        android:layout_marginTop="@dimen/margin_top"
+        app:layout_constraintTop_toBottomOf="@id/label_liquid_invoice"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/date_rescue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        app:layout_constraintTop_toBottomOf="@id/label_liquid_invoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_days_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Dias corridos"
+        app:layout_constraintTop_toBottomOf="@id/label_date_rescue"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/days_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_date_rescue"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_month_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Rendimento mensal"
+        app:layout_constraintTop_toBottomOf="@id/label_days_current"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/month_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_days_current"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_percent_cdi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Percentual do CDI do investimento"
+        app:layout_constraintTop_toBottomOf="@id/label_month_yield"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/percent_cdi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_month_yield"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_year_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Rentabilidade anual"
+        app:layout_constraintTop_toBottomOf="@id/label_percent_cdi"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/year_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_percent_cdi"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/label_period_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Rentabilidade no período"
+        app:layout_constraintTop_toBottomOf="@id/label_year_yield"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/period_yield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_year_yield"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 1.000,00" />
 
     <android.support.v7.widget.AppCompatButton
         android:layout_width="@dimen/button_size"
@@ -46,7 +219,6 @@
         android:text="@string/button_simulate_again"
         android:textColor="@color/white"
         android:background="@drawable/button_rounded"
-        android:layout_marginBottom="@dimen/margin_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
