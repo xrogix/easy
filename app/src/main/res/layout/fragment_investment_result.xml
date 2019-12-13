@@ -214,6 +214,7 @@
         tools:text="R$ 1.000,00" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_resimulate"
         android:layout_width="@dimen/button_size"
         android:layout_height="wrap_content"
         android:text="@string/button_simulate_again"

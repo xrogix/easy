@@ -22,6 +22,7 @@ class InvestmentResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        listeners()
     }
 
     private fun init() {
@@ -40,6 +41,12 @@ class InvestmentResultFragment : Fragment() {
             period_yield.text = it?.rateProfit
 
         })
+    }
+
+    private fun listeners() {
+        btn_resimulate.setOnClickListener {
+            mViewModel.reSimulate()
+        }
     }
 
     companion object {

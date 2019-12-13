@@ -32,5 +32,12 @@ class InvestmentActivity : AppCompatActivity() {
             ft.replace(R.id.content, InvestmentResultFragment.newInstance())
             ft.commit()
         })
+
+        mViewModel.reSimulate.observe(this, Observer {
+            val fm = supportFragmentManager
+            val ft = fm.beginTransaction()
+            ft.replace(R.id.content, InvestmentFragment.newInstance())
+            ft.commit()
+        })
     }
 }

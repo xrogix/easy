@@ -28,6 +28,7 @@ class InvestmentViewModel(
     private val mBtnSimulate = MutableLiveData<Boolean>().apply {
         value = false
     }
+    private val mReSimulate = MutableLiveData<Boolean>()
 
     val invoice: LiveData<String> get() = mInvoice
     val maturityDate: LiveData<String> get() = mMaturityDate
@@ -36,6 +37,7 @@ class InvestmentViewModel(
     val error: LiveData<String> get() = mError
     val btnSimulation: LiveData<Boolean> get() = mBtnSimulate
     val investment: LiveData<Investment> get() = mInvestment
+    val reSimulate: LiveData<Boolean> get() = mReSimulate
 
     fun listenFields() {
         when {
@@ -78,6 +80,10 @@ class InvestmentViewModel(
 
     fun setRate(rate: String) {
         mRate.postValue(rate)
+    }
+
+    fun reSimulate() {
+        mReSimulate.value = true
     }
 
 }
