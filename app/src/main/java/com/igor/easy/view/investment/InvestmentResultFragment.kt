@@ -3,13 +3,12 @@ package com.igor.easy.view.investment
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.igor.easy.R
 import kotlinx.android.synthetic.main.fragment_investment_result.*
-import org.koin.android.viewmodel.ext.android.sharedViewModel
+import org.koin.android.architecture.ext.sharedViewModel
 
 class InvestmentResultFragment : Fragment() {
 

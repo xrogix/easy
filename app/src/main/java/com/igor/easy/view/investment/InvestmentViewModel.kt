@@ -4,13 +4,13 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import com.igor.data.model.Investment
-import com.igor.data.provider.SimulatorProvider
+import com.igor.data.provider.SimulatorProviderInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class InvestmentViewModel(
-        private val provider: SimulatorProvider
+        private val provider: SimulatorProviderInterface
 ) : ViewModel() {
 
     private val mInvoice = MutableLiveData<String>()

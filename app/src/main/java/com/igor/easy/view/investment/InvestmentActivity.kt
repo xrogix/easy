@@ -4,7 +4,7 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.igor.easy.R
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.android.architecture.ext.viewModel
 
 class InvestmentActivity : AppCompatActivity() {
 

@@ -2,18 +2,14 @@ package com.igor.easy
 
 import android.app.Application
 import com.igor.easy.di.appModule
-import com.igor.easy.di.appViewModel
-import org.koin.core.context.startKoin
+import org.koin.android.ext.android.startKoin
 
 class ConfigApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        startKoin {
-            modules(appViewModel)
-            modules(appModule)
-        }
+        startKoin(this, listOf(appModule))
     }
 
 }
