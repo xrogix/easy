@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.igor.easy.R
 import com.igor.easy.extensions.afterTextChanged
 import kotlinx.android.synthetic.main.fragment_investment.*
-import org.koin.android.architecture.ext.sharedViewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class InvestmentFragment : Fragment() {
 

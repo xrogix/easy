@@ -5,7 +5,7 @@ import retrofit2.Call
 
 interface SimulatorProviderInterface {
     fun listRepos(
-        investmentAmount: String,
+        investedAmount: String,
         index: String,
         rate: String,
         isTaxFree: Boolean,

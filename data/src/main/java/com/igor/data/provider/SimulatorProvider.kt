@@ -19,14 +19,14 @@ class SimulatorProvider(
     }
 
     override fun listRepos(
-        investmentAmount: String,
+        investedAmount: String,
         index: String,
         rate: String,
         isTaxFree: Boolean,
         maturityDate: String
     ): Call<Investment> {
         return prepare().listRepos(
-            investmentAmount,
+            investedAmount,
             index,
             rate,
             isTaxFree,

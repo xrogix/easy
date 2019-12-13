@@ -5,13 +5,13 @@ import com.igor.data.provider.SimulatorProviderInterface
 import com.igor.data.provider.StringProvider
 import com.igor.data.provider.StringProviderInterface
 import com.igor.easy.view.investment.InvestmentViewModel
-import org.koin.android.architecture.ext.viewModel
-import org.koin.dsl.module.applicationContext
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-val appModule = applicationContext {
+val appModule = module {
     viewModel { InvestmentViewModel(get()) }
 
-    bean { StringProvider() as StringProviderInterface }
+    single { StringProvider() as StringProviderInterface }
 
-    bean { SimulatorProvider(get()) as SimulatorProviderInterface }
+    factory { SimulatorProvider(get()) as SimulatorProviderInterface }
 }
