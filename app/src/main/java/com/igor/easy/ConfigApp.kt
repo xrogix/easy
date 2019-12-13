@@ -5,7 +5,7 @@ import com.igor.easy.di.appModule
 import com.igor.easy.di.appViewModel
 import org.koin.core.context.startKoin
 
-class App : Application() {
+class ConfigApp : Application() {
 
     override fun onCreate() {
         super.onCreate()

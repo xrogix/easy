@@ -1,7 +1,5 @@
 package com.igor.data.model
 
-import com.igor.domain.InvestmentParameters
-
 data class Investment(
         val grossAmount: String,                // Valor bruto do investimento
         val taxesAmount: String,                // Valor do IR
