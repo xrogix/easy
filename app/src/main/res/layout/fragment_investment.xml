@@ -42,7 +42,7 @@
         android:id="@+id/rate_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_end_investment"
+        android:text="@string/percentage_investiment"
         android:textAlignment="center"
         android:layout_marginTop="@dimen/margin_top"
         app:layout_constraintTop_toBottomOf="@id/maturity_date"/>
