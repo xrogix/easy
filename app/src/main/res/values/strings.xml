@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Easy</string>
+    <string name="title_activity_investment">InvestmentActivity</string>
+
+    <string name="how_mutch_apply">Quanto você gostaria de aplicar?</string>
+    <string name="date_end_investment">Qual a data de vencimento do investimento?</string>
+    <string name="percentage_investiment">Qual o percentual do CDI do investimento?</string>
+    <string name="button_simulate">Simular</string>
+
+    <string name="result_label">Resultado da simulação</string>
+    <string name="total_income">Rendimento total de R$ 88,69</string>
+    <string name="button_simulate_again">Simular novamente</string>
+</resources>

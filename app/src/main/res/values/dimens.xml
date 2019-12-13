@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_top">20dp</dimen>
+    <dimen name="margin_bottom">20dp</dimen>
+    <dimen name="padding_content">20dp</dimen>
+    <dimen name="button_size">200dp</dimen>
+
+    <dimen name="result_value">30sp</dimen>
+</resources>
