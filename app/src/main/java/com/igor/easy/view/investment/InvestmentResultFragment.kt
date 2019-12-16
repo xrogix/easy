@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.igor.easy.R
+import com.igor.easy.extensions.formatDate
+import com.igor.easy.extensions.toCurrency
+import com.igor.easy.extensions.toPercent
 import kotlinx.android.synthetic.main.fragment_investment_result.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
@@ -28,17 +31,19 @@ class InvestmentResultFragment : Fragment() {
     private fun init() {
         mViewModel.investment.observe(this, Observer {
 
-            initial_invoice.text = it?.investmentParameters?.investedAmount
-            gross_amount.text = it?.grossAmount
-            rental_invoice.text = it?.netAmountProfit
-            ir_invoice.text = it?.taxesAmount
-            liquid_invoice.text = it?.netAmountProfit
-            date_rescue.text = it?.investmentParameters?.maturityDate
-            days_current.text = it?.investmentParameters?.maturityTotalDays
-            month_yield.text = it?.monthlyGrossRateProfit
-            percent_cdi.text = it?.investmentParameters?.rate
-            year_yield.text = it?.annualGrossRateProfit
-            period_yield.text = it?.rateProfit
+            txtValue.text = it?.grossAmount?.toCurrency()
+            initial_invoice.text = it?.investmentParameter?.investedAmount?.toCurrency()
+            gross_amount.text = it?.grossAmount?.toCurrency()
+            rental_invoice.text = it?.netAmountProfit?.toCurrency()
+            ir_invoice.text = it?.taxesAmount?.toCurrency()
+            liquid_invoice.text = it?.netAmountProfit?.toCurrency()
+
+            date_rescue.text = it?.investmentParameter?.maturityDate?.formatDate()
+            days_current.text = it?.investmentParameter?.maturityTotalDays
+            month_yield.text = it?.monthlyGrossRateProfit?.toPercent()
+            percent_cdi.text = it?.investmentParameter?.rate?.toPercent()
+            year_yield.text = it?.annualGrossRateProfit?.toPercent()
+            period_yield.text = it?.rateProfit?.toPercent()
 
         })
     }
