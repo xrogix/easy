@@ -10,6 +10,10 @@ import com.igor.easy.R
 import com.igor.easy.extensions.afterTextChanged
 import kotlinx.android.synthetic.main.fragment_investment.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
+import com.igor.easy.helper.InputFilterMinMax
+import android.text.InputFilter
+
+
 
 class InvestmentFragment : Fragment() {
 
@@ -48,6 +52,7 @@ class InvestmentFragment : Fragment() {
             mViewModel.setRate(it)
             mViewModel.listenFields()
         }
+        rate.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 100))
 
         btn_simulate.setOnClickListener {
             mViewModel.simulate()
