@@ -1,4 +1,4 @@
-package com.igor.domain
+package com.igor.domain.entity
 
 data class Investment(
     val grossAmount: String,                // Valor bruto do investimento

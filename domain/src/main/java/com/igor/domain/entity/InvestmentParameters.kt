@@ -1,4 +1,4 @@
-package com.igor.domain
+package com.igor.domain.entity
 
 data class InvestmentParameters(
     val investedAmount: String,        // O valor a ser investido

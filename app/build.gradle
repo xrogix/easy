@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSDK"]
     defaultConfig {
         applicationId "com.igor.easy"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion globalConfiguration["minSDK"]
+        targetSdkVersion globalConfiguration["targetSDK"]
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,26 +27,28 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+
+    def dependencies = rootProject.ext.dependencies
+
+    implementation dependencies.koin
+    implementation dependencies.appCompat
+    implementation dependencies.constraintLayout
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation dependencies.retrofit
 
     // Koin
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-android-scope:$koin_version"
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
-    implementation "org.koin:koin-android-ext:$koin_version"
+    implementation dependencies.koin
+    implementation dependencies.koinScope
+    implementation dependencies.koinViewModel
+    implementation dependencies.koinExt
 
     // Testing
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    androidTestImplementation "org.koin:koin-test:$koin_version"
-    implementation project(path: ':data')
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.koinTest
+
 }

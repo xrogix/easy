@@ -1,8 +1,11 @@
 package com.igor.data.provider
 
+import android.content.res.Resources
+import com.igor.data.R
+
 class StringProvider : StringProviderInterface {
 
     override val baseUrl: String
-        get() = "https://api-simulator-calc.easynvest.com.br/"
+        get() = Resources.getSystem().getString(R.string.base_url)
 
 }
