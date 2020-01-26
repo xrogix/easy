@@ -12,5 +12,5 @@ data class Investment(
     val taxesRate: String,                  // Faixa do IR (%)
     val rateProfit: String,                 // Rentabilidade no período
     val annualNetRateProfit: String,         // Rentabilidade líquida anual
-    val investmentParameters: InvestmentParameters
+    val investmentParameter: InvestmentParameters
 )

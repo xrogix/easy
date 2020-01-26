@@ -1,6 +1,6 @@
 package com.igor.data.provider
 
-import com.igor.data.model.Investment
+import com.igor.domain.entity.Investment
 import retrofit2.Call
 
 interface SimulatorProviderInterface {

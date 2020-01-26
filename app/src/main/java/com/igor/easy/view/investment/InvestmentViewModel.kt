@@ -3,8 +3,8 @@ package com.igor.easy.view.investment
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.igor.data.model.Investment
 import com.igor.data.provider.SimulatorProviderInterface
+import com.igor.domain.entity.Investment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

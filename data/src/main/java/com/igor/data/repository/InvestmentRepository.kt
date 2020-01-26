@@ -1,11 +1,11 @@
-package com.igor.data.service
+package com.igor.data.repository
 
-import com.igor.data.model.Investment
+import com.igor.domain.entity.Investment
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface SimulatorService {
+interface InvestmentRepository {
     @GET("calculator/simulate")
     fun listRepos(
             @Query("investedAmount") investedAmount: String,

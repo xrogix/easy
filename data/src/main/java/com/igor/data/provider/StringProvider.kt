@@ -5,7 +5,8 @@ import com.igor.data.R
 
 class StringProvider : StringProviderInterface {
 
+    //TODO get from strings
     override val baseUrl: String
-        get() = Resources.getSystem().getString(R.string.base_url)
+        get() = "https://api-simulator-calc.easynvest.com.br/"//Resources.getSystem().getString(R.string.base_url)
 
 }
